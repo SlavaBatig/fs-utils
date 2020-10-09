@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "debugjs-wrapper": "0.0.3",
+    "event-stream": "^4.0.1",
+    "express": "^4.17.1",
+    "faker": "^4.1.0"
+  }
+}
