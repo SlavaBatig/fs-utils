@@ -34,12 +34,3 @@ for (let i = 0; i <= 25000; i++) {
 stream.end()
 
 console.log('done')
-
-/**
- * 
- * @param {number} a 
- * @param {number} b 
- */
-function a(a, b) {
-  return a + b
-}
