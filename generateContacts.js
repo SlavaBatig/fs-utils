@@ -1,7 +1,7 @@
 const fs = require('fs'),
   fake = require('faker')
 
-const stream = fs.createWriteStream('5k.csv', { flags: 'a' })
+const stream = fs.createWriteStream('25k.csv', { flags: 'a' })
 
 const locales = ['EN', 'NL', 'RU']
 
@@ -23,12 +23,12 @@ for (let i = 0; i < 20; i++) {
   tags = tags.concat(`,tag ${fake.lorem.word()}`)
 }
 
-tags = `${tags}\n`
+tags = `${tags}`
 
-stream.write('full name,phone number,first name,last name,language' + tags)
+stream.write('full name,phone number,first name,last name,language' + tags + '\n')
 
-for (let i = 0; i <= 5000; i++) {
-  stream.write(`${fake.name.findName()},${generate()},${fake.name.firstName()},${fake.name.lastName()},${locales[Math.floor(Math.random() * Math.floor(3))]},${fake.lorem.word()}\n`)
+for (let i = 0; i <= 25000; i++) {
+  stream.write(`${fake.name.findName()},${generate()},${fake.name.firstName()},${fake.name.lastName()},${locales[Math.floor(Math.random() * Math.floor(3))]},${fake.lorem.word()},${tags}\n`)
 }
 
 stream.end()

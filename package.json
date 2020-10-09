@@ -4,5 +4,8 @@
     "event-stream": "^4.0.1",
     "express": "^4.17.1",
     "faker": "^4.1.0"
+  },
+  "scripts": {
+    "start": "node generateContacts.js"
   }
 }
