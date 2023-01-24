@@ -5,18 +5,26 @@ const COUNT = +process.env.COUNT || 100
 
 const stream = fs.createWriteStream(`${COUNT}.csv`)
 
-const locales = [ 'EN', 'NL', 'RU' ]
+const locales = [ 'EN', 'NL', 'UA' ]
 
 let tags = ''
 
 const numbers = '0123456789'
-const length = 7
+const length = 9
+
+const phoneNumbers = {}
 
 const generate = () => {
-  let result = '+38099'
+  let result = '+380'
   for (let i = 0; i < length; i++) {
     result = `${result}${numbers.charAt(Math.floor(Math.random() * numbers.length))}`
   }
+
+  if (phoneNumbers[result]) {
+    return generate()
+  }
+
+  phoneNumbers[result] = true
 
   return result
 }
